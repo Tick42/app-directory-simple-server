@@ -30,7 +30,7 @@ Add your app configurations to the `configurations` folder. Those files will be 
 
 ### Configuring Glue Desktop
 
-If your Glue Desktop copy is not configured to use Rest Service you need to Edit `config/system.json` file (located in GlueDesktop directory)
+If your Glue Desktop copy is not configured to retrieve its configuration from a remote source, you'll need to edit the  `config/system.json` file (located in GlueDesktop directory)
 
 1.  Add `rest-app-config-settings` under configuration:
 
