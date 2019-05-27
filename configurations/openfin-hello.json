@@ -1,0 +1,25 @@
+[
+	{
+        "title": "Openfin Hello",
+        "type": "exe",
+        "name": "hello-openfin",
+        "icon": "https://pbs.twimg.com/profile_images/961591264327163904/RnXte4iH_400x400.jpg",
+        "hidden": true,
+        "details": {
+			"command": "openfin",
+			"parameters": " -l -c https://cdn.openfin.co/demos/hello/app.json"
+        }
+   },
+   {
+        "title": "Openfin Adapter",
+        "type": "exe",
+        "name": "openfin-adapter",
+        "icon": "https://pbs.twimg.com/profile_images/961591264327163904/RnXte4iH_400x400.jpg",
+        "hidden": true,
+        "details": {
+            "path":"%GDDIR%/../Demos/OpenFinAdapter/",
+            "command": "WPFStickyWindowsTransformer.exe",
+            "parameters": " inGd"
+        }
+   }
+]
