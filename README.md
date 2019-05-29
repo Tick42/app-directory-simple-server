@@ -1,38 +1,36 @@
 ## Overview
 
-This package contains a simple REST server that implements the FDC3 App directory and is compatible with Glue Desktop. This
-basic implementation just logs the user that GD requests the data for (either from the `impersonated_user` or `user` headers) and returns
+This package contains a simple `REST` server that implements the FDC3 App directory and is compatible with Glue42 Desktop. This basic implementation just logs the user for which Glue42 Desktop requests the data (either from the `impersonated_user` or `user` headers) and returns
 the same set of data for all requests.  
 
 ## Prerequisites
 
-npm
-Node 10 (probably can run with a lower one as well)
-
-## Running
-
-```cmd
-npm i
-npm run start
-```
+To run this `REST` server, you need to install `npm` and  `Node.js v10.0.0` (would probably run with a lower version as well).
 
 ## Configuration
 
-### Configuring the server
+### Running the Server
 
-#### Port 
+To start the `REST` server, run the following commands:
 
-By default the server will listen on port 3000. The environment variable `APPD_SERVER_PORT` can be used to override that.
+```cmd
+npm i           // to install the dependencies
+npm run start   // to run the server
+```
 
-#### Application configuration files
+### Port 
 
-Add your app configurations to the `configurations` folder. Those files will be read and converted on each request.
+By default, the server will listen on port `3000`. The environment variable `APPD_SERVER_PORT` can be used to override this setting.
 
-### Configuring Glue Desktop
+### Application Configuration Files
 
-If your Glue Desktop copy is not configured to retrieve its configuration from a remote source, you'll need to edit the  `config/system.json` file (located in GlueDesktop directory)
+The server comes with a list of apps. Their configurations are stored in the `configurations` folder and can be modified. Add your app configuration to the `configurations` folder. These files will be read and converted on each request.
 
-1.  Add `rest-app-config-settings` under configuration:
+### Configuring Glue42 Desktop
+
+If your Glue42 Desktop copy is not configured to retrieve its configuration from a remote source, you will need to edit the `system.json` file (located in the `%LOCALAPPDATA%\Tick42\GlueDesktop\config` directory).
+
+1.  Add `rest-app-config-settings` under `configuration`:
 
 ```json
 "gw": {        
@@ -55,17 +53,19 @@ If your Glue Desktop copy is not configured to retrieve its configuration from a
     }
 ```
 
-2. Add a new entry to `appStores` top-level array:
+2. Add a new entry to the `appStores` top-level array:
 
 ```json
-
-  "appStores": [
+{
+    ...
+    "appStores": [
         {
             "type": "cm",
             "details": {
                 "url": "--placeholder--"
             }
         }
-  ]
-
+        ...
+    ]
+}
 ```
