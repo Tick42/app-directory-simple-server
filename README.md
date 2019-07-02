@@ -61,7 +61,7 @@ If your Glue42 Desktop copy is not configured to retrieve its configuration from
         {
             "type": "cm",
             "details": {
-                "url": "--placeholder--"
+                "url": "http://localhost:3000/appd/v1/apps/search"
             }
         }
         ...
