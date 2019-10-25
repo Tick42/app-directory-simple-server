@@ -65,3 +65,24 @@ If your Glue42 Desktop copy is not configured to retrieve its configuration from
     ]
 }
 ```
+
+**Connecting Directly to the REST Service**
+
+To configure a direct connection to the REST service providing the application store, you only need to add a new entry to the `appStores` top-level key:
+
+```json
+"appStores": [
+    {
+        "type": "rest",
+        "details": {
+            "url": "http://localhost:3000/appd/v1/apps/search",
+            "auth": "no-auth",
+            "pollInterval": 30000,
+            "enablePersistentCache": true,
+            "cacheFolder": "%LocalAppData%/Tick42/UserData/%GLUE-ENV%-%GLUE-REGION%/gcsCache/"
+        }
+    }
+]
+```
+
+The only requred properties are `type`, which should be set to `rest`, and `url`, which is the address of the remote application store. You can also set the authentication, polling interval, cache persistence and cache folder.
