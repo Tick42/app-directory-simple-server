@@ -59,10 +59,7 @@ If your Glue42 Desktop copy is not configured to retrieve its configuration from
     ...
     "appStores": [
         {
-            "type": "cm",
-            "details": {
-                "url": "http://localhost:3000/appd/v1/apps/search"
-            }
+            "type": "gcs"
         }
         ...
     ]
