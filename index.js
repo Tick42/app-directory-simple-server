@@ -22,6 +22,7 @@ app.listen(port,
 function configToManifest(config)
 {
     return {
+        appId: config.name,
         name: config.name,
         version: "1",
         title: config.title,
