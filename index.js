@@ -2,7 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require('path');
 const util = require('util');
-const json = require('comment-json');
+const json5 = require('json5');
 const app = express();
 
 const port = process.env.APPD_SERVER_PORT || 3000;
@@ -38,7 +38,7 @@ function fetchConfigurations(user)
     console.log(`fetching configurations for ${user}`);
 
     return readDir(configurationFolder)
-            .then(files => files.map(fn => readFile(path.join(configurationFolder, fn), 'utf8').then(json.parse)))
+            .then(files => files.map(fn => readFile(path.join(configurationFolder, fn), 'utf8').then(json5.parse)))
             .then(p => Promise.all(p))
             .then(configs => configs.reduce((acc, cfg) => acc.concat(Array.isArray(cfg)
                                                                              ? cfg.map(configToManifest)
