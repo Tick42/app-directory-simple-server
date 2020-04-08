@@ -29,7 +29,7 @@ The server comes with a list of apps. Their configurations are stored in the `co
 
 If your Glue42 Desktop copy is not configured to retrieve its configuration from a remote source, you will need to edit the `system.json` file (located in the `%LOCALAPPDATA%\Tick42\GlueDesktop\config` directory).
 
-1. Add a new entry to the `appStores` top-level array:
+Add a new entry to the `appStores` top-level array:
 
 ```json
 "appStores": [
