@@ -29,46 +29,7 @@ The server comes with a list of apps. Their configurations are stored in the `co
 
 If your Glue42 Desktop copy is not configured to retrieve its configuration from a remote source, you will need to edit the `system.json` file (located in the `%LOCALAPPDATA%\Tick42\GlueDesktop\config` directory).
 
-1.  Add `rest-app-config-settings` under `configuration`:
-
-```json
-"gw": {        
-        ...
-        "configuration":               
-        {
-            ...
-            "rest-app-config-settings": {
-                "enabled": true,
-                "application-settings": {
-                    "applications-url": "http://localhost:3000/appd/v1/apps/search",
-                    "client": "negotiate",
-                    "impersonation-enabled": true
-                },
-                "acs-identity": {
-                    "authentication": "desktop"
-                }
-            }
-        }
-    }
-```
-
-2. Add a new entry to the `appStores` top-level array:
-
-```json
-{
-    ...
-    "appStores": [
-        {
-            "type": "gcs"
-        }
-        ...
-    ]
-}
-```
-
-**Connecting Directly to the REST Service**
-
-To configure a direct connection to the REST service providing the application store, you only need to add a new entry to the `appStores` top-level key:
+1. Add a new entry to the `appStores` top-level array:
 
 ```json
 "appStores": [
@@ -85,4 +46,4 @@ To configure a direct connection to the REST service providing the application s
 ]
 ```
 
-The only requred properties are `type`, which should be set to `rest`, and `url`, which is the address of the remote application store. You can also set the authentication, polling interval, cache persistence and cache folder.
+The only requred properties are `type`, which should be set to `rest`, and `url`, which is the address of the remote application store. Details [here](https://docs.glue42.com/glue42-concepts/application-management/overview/index.html#application_stores-rest_service_app_stores)
