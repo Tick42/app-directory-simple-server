@@ -1,3 +1,7 @@
+# DEPRECATED:
+
+This example is deprecated in favor of a new [**Node.js Application and Layout Server Example**](https://github.com/Tick42/rest-config-example-node-js).
+
 ## Overview
 
 This package contains a simple `REST` server that implements the FDC3 App directory and is compatible with Glue42 Desktop. This basic implementation just logs the user for which Glue42 Desktop requests the data (either from the `impersonated_user` or `user` headers) and returns the same set of data for all requests.  
