@@ -134,51 +134,26 @@
         }
     },
     {
-        "title": "Client Contact 🔗",
-        "type": "window",
-        "name": "channelsclientcontact",
-        "hidden": false,
-        "icon": "http://localhost:22080/resources/icons/clientportfolio.ico",
-        "details": {
-            "url": "http://localhost:22080/client-list-portfolio-contact/dist/#/clientcontact/",
-            "top": 250,
-            "left": 400,
-            "height": 640,
-            "width": 560,
-            "mode": "tab",
-            "title": "Client Contact",
-            "allowChannels": true,
-            "loader": {
-                "enabled": true,
-                "hideOnLoad": true
-            }
-        },
-        "customProperties": {
-            "useChannels": true,
-            "includeInCanvas": false
-        }
-    },
-    {
-    "title": "Client Contact 🔗",
-    "type": "window",
-    "name": "channelsclientcontact",
-    "icon": "https://enterprise-demos.tick42.com/resources/icons/clientportfolio.ico",
-    "details": {
-      "url": "https://enterprise-demos.tick42.com/client-list-portfolio-contact/#/clientcontact/",
-      "top": 100,
-      "left": 400,
-      "height": 640,
-      "width": 560,
-      "mode": "tab",
-      "title": "Client Contact",
-      "allowChannels": true
-    },
-    "customProperties": {
-      "useChannels": true,
-      "includeInCanvas": true
-    }
-  },
-  {
+		"title": "Client Contact 🔗",
+		"type": "window",
+		"name": "channelsclientcontact",
+		"icon": "https://enterprise-demos.tick42.com/resources/icons/clientportfolio.ico",
+		"details": {
+		  "url": "https://enterprise-demos.tick42.com/client-list-portfolio-contact/#/clientcontact/",
+		  "top": 100,
+		  "left": 400,
+		  "height": 640,
+		  "width": 560,
+		  "mode": "tab",
+		  "title": "Client Contact",
+		  "allowChannels": true
+		},
+		"customProperties": {
+		  "useChannels": true,
+		  "includeInCanvas": true
+		}
+	},
+	{
         "title": "Portfolio Preview 🔗",
         "type": "window",
         "name": "channelsclientportfoliopreview",
