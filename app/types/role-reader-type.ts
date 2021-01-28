@@ -1,3 +1,8 @@
 export type RoleReader = {
-  getRolesForUser(username: string): Promise<string[]>;
+  getRolesForUser(userInfo: UserInfo): Promise<string[]>;
+}
+
+export type UserInfo = {
+  user: string;
+  groups: string[];
 }

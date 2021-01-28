@@ -4,7 +4,7 @@ const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const webpackConfig = {
   entry: './app/index.ts',
-  mode: 'production',
+  mode: 'development',
   target: 'node',
   node: {
     __filename: true,
@@ -46,12 +46,12 @@ if (isDev) {
   webpackConfig.watch = true;
   webpackConfig.mode = 'development';
   webpackConfig.output.path = webpackConfig.output.path.replace('dist', 'dist-dev')
-  webpackConfig.plugins.push(new NodemonPlugin({
-    args: ['--dev'],
-    watch: path.resolve('./dist-dev'),
-    verbose: true,
-    script: './dist-dev/index.js',
-  }))
+  // webpackConfig.plugins.push(new NodemonPlugin({
+  //   args: ['--dev'],
+  //   watch: path.resolve('./dist-dev'),
+  //   verbose: true,
+  //   script: './dist-dev/index.js',
+  // }))
   // webpackConfig.output.path.replace('dist')
 }
 

@@ -19,15 +19,19 @@ export class SQLiteRoleReader implements RoleReader {
     this.db =  new sqlite.Database(path.join(assetsDir, config.db));
   }
 
-  getRolesForUser(username: string): Promise<string[]> {
+  getRolesForUser(userInfo: {user: string, groups: string[]}): Promise<string[]> {
     return new Promise((res, rej) => {
 
-      this.db.get(rolesForUserQuery, {$username: username}, (err, row) => {
+      this.db.get(rolesForUserQuery, {$username: userInfo.user}, (err, row) => {
         if (err) {
           rej(err);
         } else {
-          let roles = JSON.parse(`[${row.roles}]`).map((role: Array<any>) => role[1]);
-          res(roles)
+          if (row) {
+            let roles = JSON.parse(`[${row.roles}]`).map((role: Array<any>) => role[1]);
+            res(roles)
+          } else {
+            res([]);
+          }
         }
       });
     })

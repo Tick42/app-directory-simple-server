@@ -23,7 +23,7 @@ class SQLiteAppFilter implements AppFilter {
   async filterApps(apps: FDC3AppConfig[], roles: string[]): Promise<FDC3AppConfig[]> {
     const allowedAppsPerRole = await this.getAppsForRoles(roles)
     return apps.filter(app => {
-      return allowedAppsPerRole.find(allowedApp => allowedApp.name === app.appId)
+      return allowedAppsPerRole.find(allowedApp => allowedApp.name === app.appId) || (app.appId.indexOf('toolbar') >= 0);
     })
   }
 

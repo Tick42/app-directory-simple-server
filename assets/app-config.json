@@ -5,25 +5,25 @@
       "folder": "./configurations"
     }
   },
-  "appFilter": {
+  "appFilter2": {
     "type": "SQLite",
     "config": {
       "db": "dbs/LDAP-roles-and-applications.db"
     }
   },
-  "appFilter2": {
+  "appFilter": {
     "type": "SQLite",
     "config": {
       "db": "dbs/rules.db"
     }
   },
-  "roleReader": {
+  "roleReader2": {
     "type": "ActiveDirectory",
     "config": {
 
     }
   },
-  "roleReader1": {
+  "roleReader": {
     "type": "SQLite",
     "config": {
       "db": "dbs/rules.db"
@@ -31,5 +31,13 @@
   },
   "server": {
     "port": 3000
-  }
+  },
+  "defaultApps": [
+    "vanilla-toolbar",
+    "embeddedAppShell",
+    "toolbar",
+    "GNS UI",
+    "start.gns.dm",
+    "gss-js-dm"
+  ]
 }
